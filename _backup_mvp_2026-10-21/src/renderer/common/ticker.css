@@ -1,0 +1,33 @@
+.ft-strip {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  contain: layout paint;
+  user-select: none;
+}
+.ft-track {
+  display: flex;
+  align-items: center;
+  flex: none;
+  height: 100%;
+  white-space: nowrap;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.ft-seq { display: flex; align-items: center; flex: none; height: 100%; }
+.ft-item { display: flex; align-items: center; flex: none; }
+.ft-logo { display: block; flex: none; width: auto; object-fit: contain; }
+.ft-text { display: flex; align-items: baseline; gap: 0.5em; white-space: nowrap; line-height: 1.1; }
+.ft-name { letter-spacing: 0.01em; }
+.ft-tag { font-size: 0.85em; font-weight: 500; }
+.ft-sep { flex: none; opacity: 0.85; }
+.ft-placeholder {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  opacity: 0.6;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}

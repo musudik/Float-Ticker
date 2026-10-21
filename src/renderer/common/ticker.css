@@ -1,0 +1,69 @@
+.ft-strip {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  contain: layout paint;
+  user-select: none;
+}
+.ft-viewport {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+}
+.ft-strip.v .ft-viewport { flex-direction: column; justify-content: flex-start; }
+
+.ft-track {
+  display: flex;
+  align-items: center;
+  flex: none;
+  height: 100%;
+  white-space: nowrap;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.ft-track.v { flex-direction: column; height: auto; width: 100%; white-space: normal; }
+.ft-seq { display: flex; align-items: center; flex: none; height: 100%; }
+.ft-track.v .ft-seq { flex-direction: column; height: auto; width: 100%; }
+
+.ft-item { display: flex; align-items: center; flex: none; }
+.ft-item.v { flex-direction: column; text-align: center; }
+.ft-logo { display: block; flex: none; width: auto; object-fit: contain; filter: var(--ft-logo-shadow, none); }
+.ft-logo-block { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: none; gap: 2px; }
+.ft-label {
+  line-height: 1.15;
+  white-space: nowrap;
+  text-shadow: var(--ft-shadow, none);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ft-item.v .ft-label { white-space: normal; }
+.ft-text { display: flex; align-items: baseline; gap: 0.5em; white-space: nowrap; line-height: 1.1; text-shadow: var(--ft-shadow, none); }
+.ft-item.v .ft-text { flex-direction: column; align-items: center; white-space: normal; gap: 0.2em; }
+.ft-name { letter-spacing: inherit; }
+.ft-tag { font-size: 0.85em; font-weight: 500; }
+.ft-sep { flex: none; opacity: 0.85; text-shadow: var(--ft-shadow, none); }
+
+/* Spotlight: one sponsor centred */
+.ft-spot { justify-content: center; }
+.ft-strip.v .ft-spot { justify-content: center; }
+.ft-spot-item { display: flex; align-items: center; justify-content: center; will-change: transform, opacity; }
+
+.ft-placeholder {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  opacity: 0.6;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: 0;
+}

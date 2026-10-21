@@ -1,0 +1,37 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+.ticker-root { position: relative; width: 100%; height: 100%; }
+
+/* Unlocked: whole strip is a native drag area; edges resize. */
+.drag-surface {
+  position: absolute;
+  inset: 0;
+  -webkit-app-region: drag;
+  app-region: drag;
+  cursor: move;
+  outline: 2px dashed transparent;
+  outline-offset: -2px;
+  transition: outline-color 0.15s;
+}
+.ticker-root.editable:hover .drag-surface { outline-color: rgba(245, 158, 11, 0.9); }
+
+.rz { position: absolute; z-index: 2; -webkit-app-region: no-drag; app-region: no-drag; }
+.rz-n, .rz-s { left: 10px; right: 10px; height: 6px; cursor: ns-resize; }
+.rz-n { top: 0; }
+.rz-s { bottom: 0; }
+.rz-e, .rz-w { top: 6px; bottom: 6px; width: 8px; cursor: ew-resize; }
+.rz-e { right: 0; }
+.rz-w { left: 0; }
+.rz-ne, .rz-nw, .rz-se, .rz-sw { width: 12px; height: 12px; }
+.rz-ne { top: 0; right: 0; cursor: nesw-resize; }
+.rz-sw { bottom: 0; left: 0; cursor: nesw-resize; }
+.rz-nw { top: 0; left: 0; cursor: nwse-resize; }
+.rz-se { bottom: 0; right: 0; cursor: nwse-resize; }
+.ticker-root.editable:hover .rz-e,
+.ticker-root.editable:hover .rz-w { background: rgba(245, 158, 11, 0.55); }
